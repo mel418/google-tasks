@@ -1,56 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Old Title</title>
+        <title>Mel's Todo App</title>
     </head>
 
     <body>
         <button>Press me</button>
 
         <script>
-            let clickButton = 'Click Me';
-            let todo1 = 'Get groceries';
-            let todo2 = 'Wash car';
-            let todo3 = 'Make dinner';
-            let pageTitle = "Mel's Todo App";
-
-            document.title = pageTitle
-
-            function addButton(buttonText) {
-                let button = document.createElement('button')
-                button.innerText = buttonText;
-                document.body.appendChild(button)
-            }
-
-            addButton(clickButton);
-
-            function addTodo(todoTitle) {
+            let todos = ['Get groceries', 'Wash car',  'Make dinner'];
+            todos.push('another todo')
+            
+            todos.forEach(function (todoTitle) {
                 let element = document.createElement('div')
                 element.innerText = todoTitle;
                 document.body.appendChild(element)
-            }
+            });
 
-            addTodo(todo1);
-            addTodo(todo2);
-            addTodo(todo3);
+            let strings = ['hello', 'world'];
+            let upperStrings = [];
+            strings.forEach(function toUpper(str) {
+                upperStrings.push(str.toUpperCase())
+            });
+            console.log(upperStrings)
 
-            function greeting(firstName) {
-                console.log('Hello ' + firstName)
-            }
-            greeting('Simon');
-            
-            function toUpper(str) {
-                let uppercaseStr = str.toUpperCase()
-                console.log(uppercaseStr)
-            }
-            toUpper('Simon')
+            let pet = ['bark' , 'meow'];
+            let doublePet = [];
+            pet.forEach(function arrayDouble(sound) {
+                doublePet.push(sound)
+                doublePet.push(sound)
+            })
+            console.log(doublePet)
 
-            function lengthConverter(inches) {
-                let length = parseFloat(inches) * 2.54
-                console.log(inches + " inches to " + length + " centimeters")
-            }
-            lengthConverter('62');
-
+            let numbers = [5, -2, 7, 0];
+            let total = 0
+            numbers.forEach(function arraySum(number) {
+                total = total + number;
+            })
+            console.log(total)
         </script>
     </body>
 </html>
